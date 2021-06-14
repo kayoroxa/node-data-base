@@ -1,0 +1,17 @@
+{
+  "dependencies": {},
+  "name": "node-data-base",
+  "description": "Simple data base local with JSON file",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "database",
+    "database node",
+    "database json"
+  ],
+  "author": "Caio Rocha",
+  "license": "ISC"
+}
