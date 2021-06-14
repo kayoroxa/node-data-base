@@ -11,8 +11,10 @@ function startNodeDataBase(options) {
 
     let contentString
     if (isPropFunc) {
-      const prev = this.load(key)
-      callback(prev)
+      const prev = load(key)
+      const retorno = callback(prev)
+      if (retorno) contentString = JSON.stringify(retorno)
+      else contentString = JSON.stringify(prev)
     } else {
       contentString = JSON.stringify(content)
     }

@@ -14,7 +14,7 @@ yarn add node-data-base
 const db = require('node-data-base')
 const optional = { rootPath: 'dataBase' } //folder root
 
-const db = startNodeDataBase()
+const db = startNodeDataBase(optional)
 ```
 
 ```js
@@ -31,4 +31,12 @@ db.sabe('cars', prev => {
 })
 
 db.load('cars') // ['fuscar', 'mustang']
+```
+
+if you want to change the root path use this:
+
+```js
+const db = require('node-data-base')
+
+const db = startNodeDataBase({ rootPath: 'dataBase' })
 ```

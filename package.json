@@ -1,8 +1,8 @@
 {
   "dependencies": {},
-  "name": "node-data-base",
+  "name": "data-base-node",
   "description": "Simple data base local with JSON file",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
