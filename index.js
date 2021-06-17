@@ -35,10 +35,31 @@ function startNodeDataBase(options) {
       return null
     }
   }
+  function pushUnique(key, newValue, finder) {
+    const prev = load(key)
+    if (finder !== undefined) {
+      const finderReplace = JSON.stringify(finder).replace(/[\{|\}|\[|\]]/g, '')
+      console.log('finder', finderReplace)
+      if (!JSON.stringify(prev).includes(finderReplace))
+        return set(key, [...prev, newValue])
+    } else {
+      const finderReplace = JSON.stringify(newValue).replace(
+        /[\{|\}|\[|\]]/g,
+        ''
+      )
+      console.log('finder', finderReplace)
+      if (!JSON.stringify(prev).includes(finderReplace)) {
+        console.log('não tem')
+        return set(key, [...prev, newValue])
+      }
+    }
+    console.log('já tem')
+  }
   return {
     set,
     save: set,
     load,
+    pushUnique,
   }
 }
 
