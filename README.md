@@ -17,19 +17,15 @@ const db = startNodeDataBase()
 ```
 
 ```js
-db.save('cars', ['ferrari', 'mustang'])
+const dbBooks = db.tryLoad('books').orStartWith([])
 
-db.load('cars') // ['ferrari', 'mustang']
-```
+dbBooks.setValue(v => [...v, { autor: 'platão', sells: 10000 }])
 
-```js
-db.save('cars', ['ferrari', 'mustang']) // ['ferrari', 'mustang']
+dbBooks.setValue(v => v.map(v => ({ ...v, sells: 99999 })))
 
-db.sabe('cars', prev => {
-  prev[0] = 'fuscar'
-})
+dbBooks.save()
 
-db.load('cars') // ['fuscar', 'mustang']
+console.log(dbBooks.value())
 ```
 
 if you want to change the root path use this:
