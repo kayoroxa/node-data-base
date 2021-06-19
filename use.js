@@ -9,5 +9,6 @@ dbLivros.setValue(v => [...v, { autor: 'caiosinho', minListening: 5 }])
 
 dbLivros.setValue(v => v.map(v => ({ ...v, minListening: 8 })))
 // dbLivros.setValue(v => v.map(v => ({ ...v, minListening: 8 })))
-dbLivros.save()
+
+dbLivros.save('reset')
 console.log(dbLivros.value())

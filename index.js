@@ -32,10 +32,11 @@ function startNodeDataBase(options) {
   }
   function save(newData) {
     const contentFilePath = `${rootPath}/${_key}.json`
+    const realData = newData ? newData : _value
 
-    const valueString = newData
-      ? JSON.stringify(newData, null, 2)
-      : JSON.stringify(_value, null, 2)
+    const valueString = JSON.stringify(realData, null, 2)
+
+    _value = realData
     try {
       fs.writeFileSync(contentFilePath, valueString)
     } catch (error) {
